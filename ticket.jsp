@@ -36,7 +36,7 @@
                         <a class="nav-link" href="index.html#lugar">El lugar y la fecha</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#form-orador">Convi√©rtete en orador</a>
+                        <a class="nav-link" href="index.html#form-orador">ConviÈrtete en orador</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn-compra-tickets active" aria-current="page" href="#">Comprar tickets</a>
@@ -62,7 +62,7 @@
                             <div class="card-body">
                                 <p>Tienen un descuento</p>
                                 <h3 class="card-title pricing-card-title">80%</h3>
-                                <small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
+                                <small class="fw-light text-muted mt-3">* Presentar documentaciÛn</small>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                             <div class="card-body">
                                 <p>Tienen un descuento</p>
                                 <h3 class="card-title pricing-card-title">50%</h3>
-                                <small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
+                                <small class="fw-light text-muted mt-3">* Presentar documentaciÛn</small>
                             </div>
                         </div>
                     </div>
@@ -86,61 +86,62 @@
                             <div class="card-body">
                                 <p>Tienen un descuento</p>
                                 <h3 class="card-title pricing-card-title">15%</h3>
-                                <small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
+                                <small class="fw-light text-muted mt-3">* Presentar documentaciÛn</small>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="titulo-gral">Venta <span>Valor de ticket $200</span></h2>
+               
+              <h2 class="titulo-gral">Venta <span>Valor de ticket $200</span></h2>
+             
+             
+             
+             
                 
-                
-                
-                
-                
-                <form action="CompraTicket.jsp">
+                <form action="comprar-ticket.html">
                     <div class="row gx-2">
                         <div class="col-md mb-3">
-                            <input type="text" name="nombre"  class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" required>
-                       
+                            <input type="text" name="nombre" value="<%= request.getParameter("nombre")%>" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" required>
                         </div>
                         <div class="col-md mb-3">
-                            <input type="text" name="apellido" class="form-control" placeholder="Apellido" aria-label="Apellido" id="apellido" required>
+                            <input type="text" name="apellido" value="<%= request.getParameter("apellido")%>" class="form-control" placeholder="Apellido" aria-label="Apellido" id="apellido" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <input type="email" name="mail" class="form-control" placeholder="Email" aria-label="Email" id="mail" required>
+                            <input type="email" name="mail" value="<%= request.getParameter("mail")%>" class="form-control" placeholder="Email" aria-label="Email" id="mail" required>
                         </div>
                     </div>
                     <div class="row gx-2">
                         <div class="col-md mb-3">
                             <label for="cantidadTickets" class="form-label">Cantidad</label>
-                            <input type="number"  name="cantidad" class="form-control" placeholder="Cantidad" aria-label="Cantidad" id="cantidadTickets" min="1" required>
+                            <input type="number"  name="cantidad" value="<%= request.getParameter("cantidad")%>" class="form-control" placeholder="Cantidad" aria-label="Cantidad" id="cantidad" min="1" required>
                         </div>
                         <div class="col-md mb-3">
-                            <label for="categoriaSelect" class="form-label">Categor√≠a</label>
-                            <select name="categoria" class="form-select" aria-label="Categor√≠a" id="categoriaSelect">
-                                <option value="" selected>-- Seleccione --</option>
+                            <label for="categoriaSelect" class="form-label">CategorÌa</label>
+                            <select name="categoria" class="form-select" aria-label="CategorÌa" id="categoriaSelect">
+                                <option value="<%= request.getParameter("categoria")%>" selected></option>
                                 <option value="0">Sin Categoria</option>
                                 <option value="1">Estudiante</option>
                                 <option value="2">Trainee</option>
                                 <option value="3">Junior</option>
                             </select>
+                                                        
                         </div>
                     </div>
                     <div class="alert alert-primary mt-2 mb-4" role="alert">
                         Total a pagar: $ <span id="totalPago" class="align-middle"></span>
                     </div>
-                    
-                    
                     <div class="row gx-2">
                         <div class="col-md mb-3">
-                            <button type="reset" class="w-100 btn btn-lg btn-form" id="btnBorrar">Borrar</button>
-                            </div>
-                        
+                            <button  class="w-100 btn btn-lg btn-form" type="button" onclick="location.href='delete.jsp'" id="btnDelete">Borrar</button>
+                        </div>
                         <div class="col-md mb-3">
-                            <button type="button" class="w-100 btn btn-lg btn-form" id="btnResumen">Resumen</button>
+                            <button class="w-100 btn btn-lg btn-form" type="button"  onclick="location.href='update.jsp'" id="btnUpdate">Modificar</button>
+                        </div>
+                        <div class="col-md mb-3">
+                            <button class="w-100 btn btn-lg btn-form"  type="submit" id="btnConfirmar">Confirmar</button>
                         </div>
                     </div>
                 </form>
@@ -157,7 +158,7 @@
                 <a class="nav-link" href="#">Preguntas <span>frecuentes</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cont√°ctanos</a>
+                <a class="nav-link" href="#">Cont·ctanos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Prensa</a>
@@ -166,7 +167,7 @@
                 <a class="nav-link" href="#">Conferencias</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">T√©rminos y <span>condiciones</span></a>
+                <a class="nav-link" href="#">TÈrminos y <span>condiciones</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Privacidad</a>
@@ -180,7 +181,6 @@
 
 <script src="js/comprar-tickets.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 </html>
